@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import ChatWidget from '@/components/ChatWidget';
 import ROIDashboard from '@/components/dashboard/ROIDashboard';
@@ -62,7 +63,7 @@ export default function LandingPage() {
                   every opportunity while you sleep.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto px-8">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto px-8" onClick={() => window.location.href='/checkout'}>
                     Book a Free Audit
                   </Button>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto px-8">
@@ -380,7 +381,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-      <ChatWidget projectID="switflow-austin-demo-dental" />
+      <ChatWidget projectID="6a043b265add4fb758709d96" />
     </div>
   );
 }
