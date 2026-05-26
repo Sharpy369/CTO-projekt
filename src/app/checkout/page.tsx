@@ -12,11 +12,8 @@ export default function CheckoutPage() {
 
   const handlePayPalCheckout = () => {
     setIsProcessing(true);
-    // Simulate PayPal handshake
-    setTimeout(() => {
-      setIsProcessing(false);
-      setStep(2);
-    }, 2000);
+    // Redirect to real payment link
+    window.location.href = "https://buy.stripe.com/manual-hvac-pro-497-special";
   };
 
   return (

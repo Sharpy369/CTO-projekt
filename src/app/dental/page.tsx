@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ChatWidget from '@/components/ChatWidget';
-import MedSpaROICalculator from '@/components/MedSpaROICalculator';
+import DentalROICalculator from '@/components/DentalROICalculator';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -121,7 +121,7 @@ export default function WestgateStagingPage() {
         </section>
 
         {/* ROI Section */}
-        <MedSpaROICalculator />
+        <DentalROICalculator />
 
         {/* Deployment Info */}
         <section className="py-20 bg-white">

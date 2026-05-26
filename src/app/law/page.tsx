@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ChatWidget from '@/components/ChatWidget';
-import MedSpaROICalculator from '@/components/MedSpaROICalculator';
+import LawRealEstateROICalculators from '@/components/LawRealEstateROICalculators';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,7 +15,7 @@ import {
   Bot
 } from "lucide-react";
 
-export default function WestgateStagingPage() {
+export default function LawStagingPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       {/* Header */}
@@ -25,7 +25,7 @@ export default function WestgateStagingPage() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <Zap className="text-white w-5 h-5 fill-current" />
             </div>
-            <span className="text-xl font-bold tracking-tight">Switflow AI | Westgate</span>
+            <span className="text-xl font-bold tracking-tight">Switflow AI | Rasansky Law</span>
           </div>
           <Badge variant="outline" className="text-blue-600 border-blue-200">Staging Environment</Badge>
         </div>
@@ -57,17 +57,17 @@ export default function WestgateStagingPage() {
               <div className="flex-1 relative w-full max-w-[500px]">
                 <Card className="relative border-2 shadow-2xl overflow-hidden">
                   <div className="bg-slate-900 p-3 flex items-center justify-between border-b border-slate-800">
-                    <span className="text-[10px] text-slate-400 font-mono">Westgate AI Assistant — Live Preview</span>
+                    <span className="text-[10px] text-slate-400 font-mono">Rasansky Law Intake — Live Preview</span>
                   </div>
                   <CardContent className="p-0 bg-slate-50">
                     <div className="h-[300px] flex flex-col p-4">
                       <div className="flex justify-start mb-4">
                         <div className="bg-white border rounded-2xl rounded-tl-none px-4 py-2 text-sm max-w-[80%] shadow-sm">
-                          Hi! I&apos;m the Westgate Dental Assistant. I can help you book a cleaning or answer questions about our practice. What can I do for you today?
+                          Welcome to Rasansky Law Firm. I can help you determine if you have a viable personal injury case. What happened?
                         </div>
                       </div>
                       <div className="mt-auto text-center p-4">
-                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the live bot.</p>
+                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the legal intake bot.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -77,14 +77,14 @@ export default function WestgateStagingPage() {
           </div>
         </section>
 
-        {/* Focus Section: No-Show Reduction */}
+        {/* Focus Section: Lead Qualification */}
         <section className="py-20 bg-slate-50 border-y">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Target Outcome: No-Show Reduction</h2>
+              <h2 className="text-3xl font-bold mb-4">Target Outcome: Pre-Qualified Leads</h2>
               <p className="text-slate-600">
-                Our SMS reminder sequence doesn&apos;t just notify; it engages. 
-                Patients can confirm, reschedule, or ask questions in real-time without calling the front desk.
+                Our automated intake process filters out non-viable leads and captures critical case details 24/7, 
+                ensuring your team only focuses on high-value personal injury cases.
               </p>
             </div>
 
@@ -92,28 +92,28 @@ export default function WestgateStagingPage() {
               <Card>
                 <CardHeader>
                   <Calendar className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Auto-Scheduling</CardTitle>
+                  <CardTitle>Case Triage</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Synced with your calendar. Patients book when they want, even at 2 AM.
+                  Automated incident timeframe and severity scoring to prioritize the most urgent intakes.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <Zap className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Instant SMS</CardTitle>
+                  <CardTitle>Conflict Capture</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Immediate confirmation and reminder texts sent to every patient.
+                  Instant collection of adverse parties to run against your conflict database via Make.com.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <ShieldCheck className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Clean Data</CardTitle>
+                  <CardTitle>Auto-Booking</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Insurance info and medical history captured before they walk in.
+                  Qualified leads can book directly into your GHL or Clio calendar for an initial consult.
                 </CardContent>
               </Card>
             </div>
@@ -121,7 +121,7 @@ export default function WestgateStagingPage() {
         </section>
 
         {/* ROI Section */}
-        <MedSpaROICalculator />
+        <LawRealEstateROICalculators />
 
         {/* Deployment Info */}
         <section className="py-20 bg-white">
