@@ -155,7 +155,7 @@ export default function HVACStagingPage() {
           © 2026 Switflow AI Staging — Air Conditioning Specialists Internal Demo
         </div>
       </footer>
-      <ChatWidget projectID="6a043a53e49e5987587099b2" />
+      <ChatWidget projectID="6a043d8944cd7fb75870b224" />
     </div>
   );
 }

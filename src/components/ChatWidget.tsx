@@ -21,7 +21,7 @@ export default function ChatWidget({ projectID }: { projectID: string }) {
         window.voiceflow.chat.load({
           verify: { projectID },
           url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
+          versionID: 'development'
         });
       }
     };
