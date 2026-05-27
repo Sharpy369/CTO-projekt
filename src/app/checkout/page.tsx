@@ -12,8 +12,11 @@ export default function CheckoutPage() {
 
   const handlePayPalCheckout = () => {
     setIsProcessing(true);
-    // Redirect to real payment link
-    window.location.href = "https://buy.stripe.com/manual-hvac-pro-497-special";
+    // Pivot to manual invoice due to security update
+    setTimeout(() => {
+      setIsProcessing(false);
+      window.location.href = 'https://buy.stripe.com/manual-hvac-pro-497-special';
+    }, 1500);
   };
 
   return (
@@ -79,11 +82,16 @@ export default function CheckoutPage() {
                       {isProcessing ? (
                         "Processing..."
                       ) : (
-                        <>
-                          Pay with <span className="italic">PayPal</span>
-                        </>
+                        "Secure Payment with Stripe/PayPal"
                       )}
                     </Button>
+                    <div className="p-4 border-2 border-dashed border-slate-200 rounded-lg bg-slate-50">
+                      <p className="text-sm font-bold text-slate-700 mb-2">Prefer Manual Invoice?</p>
+                      <p className="text-xs text-slate-600 mb-3">John, we are currently refreshing our automated gateway. You can also secure your loyalty rate via direct invoice.</p>
+                      <Button variant="outline" className="w-full text-xs" onClick={() => setStep(3)}>
+                        Request Manual Invoice & ACH Details
+                      </Button>
+                    </div>
                     <p className="text-[10px] text-center text-slate-400">
                       Your payment is processed securely via PayPal. Switflow AI does not store your credit card information.
                     </p>
@@ -133,7 +141,7 @@ export default function CheckoutPage() {
               </div>
             </div>
           </div>
-        ) : (
+        ) : step === 2 ? (
           <Card className="max-w-md mx-auto text-center p-12">
             <CardContent className="space-y-6">
               <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
@@ -146,6 +154,31 @@ export default function CheckoutPage() {
               <div className="pt-6">
                 <Button className="w-full flex gap-2" onClick={() => window.location.href = '/'}>
                   Go to ROI Dashboard <ArrowRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ) : (
+          <Card className="max-w-md mx-auto text-center p-12">
+            <CardContent className="space-y-6">
+              <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto">
+                <ShieldCheck className="w-10 h-10" />
+              </div>
+              <h2 className="text-2xl font-bold">Invoice Requested</h2>
+              <p className="text-slate-600">
+                John, we've sent a manual invoice and ACH instructions to your email. Your $497 loyalty rate is now locked.
+              </p>
+              <div className="p-4 bg-slate-50 border rounded-lg text-left">
+                <p className="text-xs font-bold text-slate-500 uppercase mb-2">Next Steps:</p>
+                <ul className="text-xs text-slate-600 space-y-2">
+                  <li>1. Check your email for Invoice #SWIT-HVAC-2026-001</li>
+                  <li>2. Complete payment via the secure Stripe link in the email</li>
+                  <li>3. Notify your success manager once completed</li>
+                </ul>
+              </div>
+              <div className="pt-6">
+                <Button variant="outline" className="w-full flex gap-2" onClick={() => setStep(1)}>
+                  Back to Checkout
                 </Button>
               </div>
             </CardContent>

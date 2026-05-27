@@ -15,7 +15,7 @@ import {
   Bot
 } from "lucide-react";
 
-export default function LawStagingPage() {
+export default function WestgateStagingPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       {/* Header */}
@@ -57,17 +57,17 @@ export default function LawStagingPage() {
               <div className="flex-1 relative w-full max-w-[500px]">
                 <Card className="relative border-2 shadow-2xl overflow-hidden">
                   <div className="bg-slate-900 p-3 flex items-center justify-between border-b border-slate-800">
-                    <span className="text-[10px] text-slate-400 font-mono">Rasansky Law Intake — Live Preview</span>
+                    <span className="text-[10px] text-slate-400 font-mono">Rasansky AI Assistant — Live Preview</span>
                   </div>
                   <CardContent className="p-0 bg-slate-50">
                     <div className="h-[300px] flex flex-col p-4">
                       <div className="flex justify-start mb-4">
                         <div className="bg-white border rounded-2xl rounded-tl-none px-4 py-2 text-sm max-w-[80%] shadow-sm">
-                          Welcome to Rasansky Law Firm. I can help you determine if you have a viable personal injury case. What happened?
+                          Hi! I'm the Rasansky Law Assistant. I can help you determine if you have a case and check for potential conflicts. How can I help you?
                         </div>
                       </div>
                       <div className="mt-auto text-center p-4">
-                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the legal intake bot.</p>
+                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the live bot.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -77,14 +77,14 @@ export default function LawStagingPage() {
           </div>
         </section>
 
-        {/* Focus Section: Lead Qualification */}
+        {/* Focus Section: Conflict Check Logic */}
         <section className="py-20 bg-slate-50 border-y">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Target Outcome: Pre-Qualified Leads</h2>
+              <h2 className="text-3xl font-bold mb-4">Target Outcome: Automated Conflict Checks</h2>
               <p className="text-slate-600">
-                Our automated intake process filters out non-viable leads and captures critical case details 24/7, 
-                ensuring your team only focuses on high-value personal injury cases.
+                Our AI doesn't just take messages; it identifies potential conflicts of interest in real-time, 
+                saving your intake team hours of manual vetting.
               </p>
             </div>
 
@@ -92,33 +92,34 @@ export default function LawStagingPage() {
               <Card>
                 <CardHeader>
                   <Calendar className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Case Triage</CardTitle>
+                  <CardTitle>Case Qualification</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Automated incident timeframe and severity scoring to prioritize the most urgent intakes.
+                  Leads are qualified based on your specific criteria before they reach your team.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <Zap className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Conflict Capture</CardTitle>
+                  <CardTitle>Conflict Logic</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Instant collection of adverse parties to run against your conflict database via Make.com.
+                  Immediate cross-referencing with your client database to flag potential conflicts.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <ShieldCheck className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Auto-Booking</CardTitle>
+                  <CardTitle>GHL Sync</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Qualified leads can book directly into your GHL or Clio calendar for an initial consult.
+                  Qualified leads and consultation bookings are pushed directly into your CRM.
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
+
 
         {/* ROI Section */}
         <LawRealEstateROICalculators />

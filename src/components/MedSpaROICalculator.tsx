@@ -15,10 +15,10 @@ const currency = new Intl.NumberFormat('en-US', {
 
 const number = new Intl.NumberFormat('en-US');
 
-export default function DentalROICalculator() {
-  const [averageProcedureValue, setAverageProcedureValue] = useState(250);
-  const [monthlyMissedCalls, setMonthlyMissedCalls] = useState(40);
-  const [conversionRate, setConversionRate] = useState(25);
+export default function MedSpaROICalculator() {
+  const [averageProcedureValue, setAverageProcedureValue] = useState(350);
+  const [monthlyMissedCalls, setMonthlyMissedCalls] = useState(30);
+  const [conversionRate, setConversionRate] = useState(35);
 
   const projected = useMemo(() => {
     const qualifiedLeads = monthlyMissedCalls * (conversionRate / 100);
@@ -33,17 +33,17 @@ export default function DentalROICalculator() {
   }, [averageProcedureValue, monthlyMissedCalls, conversionRate]);
 
   return (
-    <section id="dental-roi" className="py-20 bg-gradient-to-b from-blue-50 via-white to-white border-y">
+    <section id="medspa-roi" className="py-20 bg-gradient-to-b from-blue-50 via-white to-white border-y">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="bg-blue-100 text-blue-700 border border-blue-200 mb-4 px-3 py-1">
-            Dental Revenue Leak Calculator
+            HVAC Revenue Leak Calculator
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
             Estimate Monthly Revenue You Could Recover
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto mt-3">
-            Model how much additional revenue a 24/7 dental assistant can capture from missed patient inquiries and no-show reductions.
+            Model how much additional revenue a 24/7 HVAC intake assistant can capture from missed service calls.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function DentalROICalculator() {
             <CardContent className="space-y-8">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="procedureValue">Average Appointment Value</Label>
+                  <Label htmlFor="procedureValue">Average Service Call Value</Label>
                   <span className="text-sm font-semibold text-blue-700">
                     {currency.format(averageProcedureValue)}
                   </span>
@@ -66,15 +66,15 @@ export default function DentalROICalculator() {
                 <Input
                   id="procedureValue"
                   type="number"
-                  min={100}
+                  min={250}
                   step={10}
                   value={averageProcedureValue}
                   onChange={(e) => setAverageProcedureValue(Number(e.target.value) || 0)}
                 />
                 <input
                   type="range"
-                  min={100}
-                  max={1000}
+                  min={250}
+                  max={500}
                   step={10}
                   value={averageProcedureValue}
                   onChange={(e) => setAverageProcedureValue(Number(e.target.value))}
@@ -84,7 +84,7 @@ export default function DentalROICalculator() {
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="missedCalls">Monthly Missed/After-Hours Leads</Label>
+                  <Label htmlFor="missedCalls">Monthly Missed Calls (Estimate)</Label>
                   <span className="text-sm font-semibold text-blue-700">{number.format(monthlyMissedCalls)}</span>
                 </div>
                 <Input
@@ -108,7 +108,7 @@ export default function DentalROICalculator() {
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="conversionRate">Booking Conversion Rate</Label>
+                  <Label htmlFor="conversionRate">Conversion Rate</Label>
                   <span className="text-sm font-semibold text-blue-700">{conversionRate}%</span>
                 </div>
                 <Input
@@ -150,7 +150,7 @@ export default function DentalROICalculator() {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-                  <p className="text-xs uppercase tracking-wider text-slate-300 mb-1">Recovered New Patients</p>
+                  <p className="text-xs uppercase tracking-wider text-slate-300 mb-1">Recovered Qualified Leads</p>
                   <p className="text-2xl font-bold">{projected.qualifiedLeads.toFixed(1)}</p>
                 </div>
                 <div className="rounded-xl bg-white/5 border border-white/10 p-4">
@@ -164,14 +164,14 @@ export default function DentalROICalculator() {
               <div className="rounded-xl border border-blue-200/30 bg-blue-400/10 p-4 text-sm text-blue-100 flex items-start gap-2">
                 <Sparkles className="w-4 h-4 mt-0.5 shrink-0" />
                 <span>
-                  Based on your estimates, Switflow AI can help your practice respond instantly, recover missed calls,
-                  and reduce no-shows via automated SMS engagement.
+                  Based on your estimates, Switflow AI can help your HVAC business respond instantly, recover missed service calls,
+                  and convert more urgent inquiries into booked jobs.
                 </span>
               </div>
 
               <div className="flex items-center gap-2 text-xs text-slate-300">
                 <TrendingUp className="w-4 h-4 text-emerald-300" />
-                Assumes 24/7 AI intake and automated appointment reminder workflows are active.
+                Assumes missed HVAC inquiries are captured 24/7 by the AI intake workflow.
               </div>
             </CardContent>
           </Card>

@@ -3,7 +3,7 @@ import React from 'react';
 import ChatWidget from '@/components/ChatWidget';
 import ROIDashboard from '@/components/dashboard/ROIDashboard';
 import CaseStudiesSection from '@/components/case-studies/CaseStudiesSection';
-import HVACROICalculator from '@/components/HVACROICalculator';
+import MedSpaROICalculator from '@/components/MedSpaROICalculator';
 import LawRealEstateROICalculators from '@/components/LawRealEstateROICalculators';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -196,7 +196,7 @@ export default function LandingPage() {
         </section>
 
         {/* Niche ROI Calculators */}
-        <HVACROICalculator />
+        <MedSpaROICalculator />
         <LawRealEstateROICalculators />
 
         {/* Live Dashboard Section */}

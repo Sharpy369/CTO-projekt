@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ChatWidget from '@/components/ChatWidget';
-import HVACROICalculator from '@/components/HVACROICalculator';
+import MedSpaROICalculator from '@/components/MedSpaROICalculator';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -57,17 +57,17 @@ export default function HVACStagingPage() {
               <div className="flex-1 relative w-full max-w-[500px]">
                 <Card className="relative border-2 shadow-2xl overflow-hidden">
                   <div className="bg-slate-900 p-3 flex items-center justify-between border-b border-slate-800">
-                    <span className="text-[10px] text-slate-400 font-mono">HVAC AI Assistant — Live Preview</span>
+                    <span className="text-[10px] text-slate-400 font-mono">AC Specialists AI Assistant — Live Preview</span>
                   </div>
                   <CardContent className="p-0 bg-slate-50">
                     <div className="h-[300px] flex flex-col p-4">
                       <div className="flex justify-start mb-4">
                         <div className="bg-white border rounded-2xl rounded-tl-none px-4 py-2 text-sm max-w-[80%] shadow-sm">
-                          Emergency HVAC Support here. Is your AC or Heat currently out, or are you looking for a routine service?
+                          Hi! I'm the AC Specialists Assistant. I can help you schedule a repair or handle an emergency cooling outage. How can I help you today?
                         </div>
                       </div>
                       <div className="mt-auto text-center p-4">
-                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the emergency intake bot.</p>
+                        <p className="text-xs text-slate-400 italic">Use the bubble in the bottom right to test the live bot.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -77,14 +77,14 @@ export default function HVACStagingPage() {
           </div>
         </section>
 
-        {/* Focus Section: Emergency Dispatch */}
+        {/* Focus Section: Lead Capture */}
         <section className="py-20 bg-slate-50 border-y">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Target Outcome: 24/7 Emergency Dispatch</h2>
+              <h2 className="text-3xl font-bold mb-4">Target Outcome: Emergency Rescue</h2>
               <p className="text-slate-600">
-                Our AI receptionist ensures you never miss a high-ticket emergency call. 
-                It qualifies leads and dispatches them directly to ServiceTitan, even at 2 AM.
+                Our AI doesn't just take messages; it qualifies urgency. 
+                Emergency cooling outages are flagged and dispatched to your on-call tech instantly.
               </p>
             </div>
 
@@ -92,10 +92,10 @@ export default function HVACStagingPage() {
               <Card>
                 <CardHeader>
                   <Calendar className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>Emergency Triage</CardTitle>
+                  <CardTitle>ServiceTitan Sync</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Instantly identifies "System OUT" calls and marks them as high priority.
+                  Jobs are created directly on your dispatch board with all patient details.
                 </CardContent>
               </Card>
               <Card>
@@ -104,16 +104,16 @@ export default function HVACStagingPage() {
                   <CardTitle>Instant Dispatch</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Automated job creation in ServiceTitan with all necessary homeowner details.
+                  High-priority alerts sent via SMS to your technician within seconds.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <ShieldCheck className="w-8 h-8 text-blue-600 mb-2" />
-                  <CardTitle>On-Call Alerts</CardTitle>
+                  <CardTitle>24/7 Coverage</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-slate-600">
-                  Immediate SMS notifications to your on-call technician for urgent jobs.
+                  Never miss a midnight emergency call again.
                 </CardContent>
               </Card>
             </div>
@@ -121,7 +121,15 @@ export default function HVACStagingPage() {
         </section>
 
         {/* ROI Section */}
-        <HVACROICalculator />
+        <section className="py-20 bg-white border-b">
+           <div className="container mx-auto px-4 text-center">
+             <h2 className="text-3xl font-bold mb-8">Estimated ROI: Rescued Revenue</h2>
+             <div className="max-w-md mx-auto bg-blue-50 p-8 rounded-2xl border border-blue-100">
+               <p className="text-4xl font-black text-blue-600 mb-2">$2,100</p>
+               <p className="text-sm text-slate-600 font-medium">Captured in 7-Day Shadow Trial</p>
+             </div>
+           </div>
+        </section>
 
         {/* Deployment Info */}
         <section className="py-20 bg-white">
